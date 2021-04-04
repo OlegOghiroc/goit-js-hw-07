@@ -20,6 +20,6 @@ greenEl.textContent = 'Зелень';
 const seasonsEl = document.createElement('li');
 seasonsEl.textContent = 'Приправы';
 
-const ingredients = document.querySelector('#ingredients');
-ingredients.appendChild(potatoEl);
-console.log(ingredients)
+const ingredientsEl = document.querySelector('#ingredients');
+ingredientsEl.append(potatoEl, mushroomsEl, garlicEl, tomatosEl, greenEl, seasonsEl);
+console.log(ingredientsEl)
