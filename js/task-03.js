@@ -18,13 +18,24 @@ const images = [
 
 
 const galleryList = document.querySelector('#gallery');
-galleryList.style.listStyle = 'none';
+const onImageGalery = images.map(({ url, alt }) => {
+  return `<li class="galleryItem"><img src="${url}" alt="${alt}"  width="300" height="300"></li>`;
+}).join('');
 
-const onGaleryMaker = images.map(image => {
-  const itemEl = document.createElement('li');
-  itemEl.style.margin = '20px';
-  itemEl.insertAdjacentHTML('afterbegin', `<img src='${image.url}' alt='${image.alt}' width ='400px' height = '300px'>`)
-  return itemEl;
-})
+galleryList.insertAdjacentHTML('afterbegin',onImageGalery);
 
-galleryList.append(...onGaleryMaker)
+
+
+
+
+
+
+
+// const onGaleryMaker = images.map(image => {
+//   const itemEl = document.createElement('li');
+//   itemEl.style.margin = '20px';
+//   itemEl.insertAdjacentHTML('afterbegin', `<img src='${image.url}' alt='${image.alt}' width ='400px' height = '300px'>`)
+//   return itemEl;
+// })
+
+// galleryList.append(...onGaleryMaker)
